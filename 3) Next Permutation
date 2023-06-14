@@ -1,0 +1,23 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def nextPermutation(permutation, n):
+    # Write your code here.
+    # Return a list.
+    n=len(permutation)
+    ind=-1
+    for i in range(n-1,0,-1):
+        if permutation[i-1]<permutation[i]:
+            ind=i-1
+            break
+    if ind==-1:
+        permutation.sort()
+    else:
+        for i in range(n-1,ind,-1):
+            if permutation[i]>permutation[ind]:
+                permutation[i],permutation[ind]=permutation[ind],permutation[i]
+                break
+        permutation[ind+1:]=reversed(permutation[ind+1:])
+    return permutation
