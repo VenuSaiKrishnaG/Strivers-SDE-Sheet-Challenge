@@ -1,0 +1,23 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+'''
+
+    class Node:
+        def __init__(self, data):
+            self.data = data
+            self.next = None
+
+'''
+
+def findMiddle(head):
+    # Write your code here
+    # head denoted head of linked list
+    slow_tortoise=head
+    fast_tortoise=head
+    while(fast_tortoise!=None and fast_tortoise.next!=None):
+        slow_tortoise=slow_tortoise.next
+        fast_tortoise=fast_tortoise.next.next
+    return slow_tortoise
